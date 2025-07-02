@@ -1,0 +1,2 @@
+git config  --global user.name “Coquito”
+git config --global user.email sebastian.raymudo.r.c@gmail.com

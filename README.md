@@ -1,2 +1,2 @@
-# regression-tests-fe
+# Getting started coquito
 

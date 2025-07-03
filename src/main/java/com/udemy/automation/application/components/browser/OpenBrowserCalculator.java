@@ -9,14 +9,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 /**
  * @author Henry J. Calani A.
  */
-public class OpenBrowser  implements Task {
+public class OpenBrowserCalculator implements Task {
 
     @Autowired
     private ApplicationConfig config;
 
     @Override
     public <T extends Actor> void performAs(T actor) {
-        actor.attemptsTo(Open.url(config.getUrlGoogle()));
+
+        actor.attemptsTo(Open.url(config.getUrlCalculator()));
     }
 
 }

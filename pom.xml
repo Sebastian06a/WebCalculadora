@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.udemy.automation</groupId>
-    <artifactId>automation-app-fe-regression-test</artifactId>
+    <artifactId>set-app-fe-regression-test</artifactId>
     <version>1.0.0</version>
     <packaging>jar</packaging>
 
@@ -15,13 +15,16 @@
 
         <java.version>1.8</java.version>
 
-        <serenity.version>2.0.69</serenity.version>
+        <serenity.version>2.1.5</serenity.version>
 
-        <junit.version>4.12</junit.version>
+        <junit.version>5.1.1</junit.version>
 
         <spring.version>5.0.0.RELEASE</spring.version>
 
         <lombok.version>1.18.6</lombok.version>
+
+        <tags></tags>
+
     </properties>
 
     <dependencyManagement>
@@ -39,6 +42,15 @@
     </dependencyManagement>
 
     <dependencies>
+
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-engine</artifactId>
+            <version>${junit.version}</version>
+            <scope>test</scope>
+        </dependency>
+
+
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-core</artifactId>
@@ -84,12 +96,12 @@
             <version>${serenity.version}</version>
         </dependency>
 
-        <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>${junit.version}</version>
-            <scope>test</scope>
-        </dependency>
+        <!--<dependency>-->
+        <!--<groupId>junit</groupId>-->
+        <!--<artifactId>junit</artifactId>-->
+        <!--<version>${junit.version}</version>-->
+        <!--<scope>test</scope>-->
+        <!--</dependency>-->
 
         <dependency>
             <groupId>org.springframework</groupId>
@@ -121,6 +133,19 @@
                 <groupId>net.serenity-bdd.maven.plugins</groupId>
                 <artifactId>serenity-maven-plugin</artifactId>
                 <version>${serenity.version}</version>
+
+                <dependencies>
+                    <dependency>
+                        <groupId>net.serenity-bdd</groupId>
+                        <artifactId>serenity-single-page-report</artifactId>
+                        <version>${serenity.version}</version>
+                    </dependency>
+                </dependencies>
+                <configuration>
+                    <tags>${tags}</tags>
+                    <reports>single-page-html</reports>
+                </configuration>
+
                 <executions>
                     <execution>
                         <id>serenity-reports</id>
@@ -133,7 +158,4 @@
             </plugin>
         </plugins>
     </build>
-
-
-
 </project>

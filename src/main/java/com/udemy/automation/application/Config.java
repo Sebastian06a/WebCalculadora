@@ -10,4 +10,3 @@ import org.springframework.context.annotation.Configuration;
 @ComponentScan("com.udemy.automation.application")
 public class Config {
 }
-

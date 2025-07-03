@@ -43,10 +43,14 @@ public abstract class AbstractTest {
     }
 
     protected <T extends Task> T taskInstance(Class<T> clazz) {
+
         return taskFactory.create(clazz);
     }
 
     protected <T extends Question> T questionInstance(Class<T> clazz) {
+
         return questionFactory.create(clazz);
     }
+
+
 }

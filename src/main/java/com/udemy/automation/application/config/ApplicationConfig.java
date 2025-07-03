@@ -11,44 +11,49 @@ import org.springframework.context.annotation.PropertySource;
 @Configuration
 @PropertySource("classpath:application.properties")
 public class ApplicationConfig {
-
     @Getter
-    @Value("${app.url}")
-    private String url;
-
-    @Getter
-    @Value("${app.url.calculator}")
-    private String urlCalculator;
+    @Value("https://www.google.com/")
+    private String urlGoogle;
 
     @Getter
     @Value("${app.url.moodle}")
     private String urlMoodle;
 
     @Getter
-    @Value("${user.messaging}")
-    private String user;
+    @Value("${app.username.moodle}")
+    private String userNameMoodle;
 
     @Getter
-    @Value("${password.messaging}")
-    private String password;
+    @Value("${app.password.moodle}")
+    private String passwordMoodle;
 
     @Getter
-    @Value("${first.value}")
+    @Value("${app.url.calculator}")
+    private String urlCalculator;
+
+    @Getter
+    @Value("10")
     private String firstValue;
 
     @Getter
-    @Value("${second.value}")
+    @Value("5")
     private String secondValue;
 
     @Getter
-    @Value("${user.moodle}")
-    private String userMoodle;
+    @Value("${app.url.pos}")
+    private String urlPos;
 
     @Getter
-    @Value("${password.moodle}")
-    private String passwordMoodle;
+    @Value("${user.pos}")
+    private String userPos;
 
-    public String getUrl() {
-        return url;
+    @Getter
+    @Value("${password.pos}")
+    private String passwordPos;
+
+
+    public  String getUrlGoogle(){
+        return urlGoogle;
     }
+
 }
